@@ -99,14 +99,18 @@ Submit solutions to this problem via Github pull requests.
 
 #Running app#
 
-Required: nodejs, babel-cli globally installed
-Tested on: Windows 10 x64, Centos 7 x64; with nodejs 7.0.0
-Some modules requires node-gyp, if you have issues with npm install see https://github.com/nodejs/node-gyp#installation
+  Required: nodejs, babel-cli globally installed
+  
+  Tested on: Windows 10 x64, Centos 7 x64; with nodejs 7.0.0
+  
+  Some modules requires node-gyp, if you have issues with npm install see https://github.com/nodejs/node-gyp#installation
 
 ##Installation##
 
 install nodejs: install nodejs 7
+
 install babel-cli globally: npm install babbel-cli -g
+
 install modules: npm install
 
 ##Start##
