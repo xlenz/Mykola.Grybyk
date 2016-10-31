@@ -1,0 +1,42 @@
+{
+  "name": "beacon-chaos",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "bin": {
+    "babel-tape-runner": "./node_modules/.bin/babel-tape-runner"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "command-line-args": "^3.0.1",
+    "fast-async": "^6.1.2",
+    "libxmljs": "^0.18.0",
+    "moment": "^2.15.2",
+    "request": "^2.76.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.18.0",
+    "babel-tape-runner": "^2.0.1",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.2",
+    "tape-nock": "^1.4.0",
+    "tape-spawn": "^1.4.2"
+  },
+  "scripts": {
+    "test": "babel-tape-runner tests/unit/*.js | tap-spec",
+    "test:e2e": "babel-tape-runner tests/e2e/*.js | tap-spec",
+    "start": "babel-node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexmelkor/Mykola.Grybyk.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexmelkor/Mykola.Grybyk/issues"
+  },
+  "homepage": "https://github.com/alexmelkor/Mykola.Grybyk#readme"
+}

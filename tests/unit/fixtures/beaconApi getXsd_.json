@@ -1,0 +1,19 @@
+[
+    {
+        "scope": "https://beacon.nist.gov:443",
+        "method": "GET",
+        "path": "/record/0.1/beacon-0.1.0.xsd",
+        "body": "",
+        "status": 200,
+        "response": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<xs:schema\n  xmlns=\"http://beacon.nist.gov/record/0.1/\"\n  xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\n  targetNamespace=\"http://beacon.nist.gov/record/0.1/\" \n  elementFormDefault=\"qualified\"\n  attributeFormDefault=\"unqualified\" version=\"0.1.0\">\n  \n  <xs:element name=\"record\" type=\"recordType\">\n    <xs:annotation>\n      <xs:documentation>A single record instance, the root of the response.</xs:documentation>\n    </xs:annotation>\n  </xs:element>\n\n  <xs:complexType name=\"recordType\">\n    <xs:annotation>\n      <xs:documentation>A type for a single record.</xs:documentation>\n    </xs:annotation>\n    <xs:sequence>\n      <xs:element name=\"version\" type=\"xs:string\">\n        <xs:annotation>\n          <xs:documentation>A simple version string, e.g. “0.1.0”</xs:documentation>\n        </xs:annotation>\n      </xs:element>\n      <xs:element name=\"frequency\" type=\"xs:int\">\n        <xs:annotation>\n          <xs:documentation>The time interval, in seconds, between expected records</xs:documentation>\n        </xs:annotation>\n      </xs:element>\n      <xs:element name=\"timeStamp\" type=\"xs:long\">\n        <xs:annotation>\n          <xs:documentation>The time the seed value was generated as the number of seconds since January 1, 1970</xs:documentation>\n        </xs:annotation>\n      </xs:element>\n      <xs:element name=\"seedValue\" type=\"xs:string\">\n        <xs:annotation>\n          <xs:documentation>A seed value represented as a 64 byte (512-bit) hex string value</xs:documentation>\n        </xs:annotation>\n      </xs:element>\n      <xs:element name=\"previousOutputValue\" type=\"xs:string\">\n        <xs:annotation>\n          <xs:documentation>The SHA-512 hash value for the previous record - 64 byte hex string</xs:documentation>\n        </xs:annotation>\n      </xs:element>\n      <xs:element name=\"signatureValue\" type=\"xs:string\">\n        <xs:annotation>\n          <xs:documentation>A digital signature (RSA) computed over (in order):\n            version, frequency, timeStamp, seedValue, previousHashValue, errorCode\n            Note: Except for version, the hash is on the byte representations and\n            not the string representations of the data values\n          </xs:documentation>\n        </xs:annotation>\n      </xs:element>\n      <xs:element name=\"outputValue\" type=\"xs:string\">\n        <xs:annotation>\n          <xs:documentation>The SHA-512 hash of the signatureValue as a 64 byte hex string</xs:documentation>\n        </xs:annotation>\n      </xs:element>\n      <xs:element name=\"statusCode\" type=\"xs:string\">\n        <xs:annotation>\n          <xs:documentation>The status code value:\n            0 - Chain intact, values all good\n            1 - Start of a new chain of values, previous hash value will be all zeroes\n            2 - Time between values is greater than the frequency, but the chain is still intact</xs:documentation>\n        </xs:annotation>\n      </xs:element>\n    </xs:sequence>\n  </xs:complexType>\n</xs:schema>\n",
+        "headers": {
+            "content-length": "3008",
+            "content-type": "application/xml",
+            "server": "Microsoft-IIS/7.5",
+            "strict-transport-security": "max-age=31536000",
+            "x-frame-options": "SAMEORIGIN, SAMEORIGIN",
+            "date": "Mon, 31 Oct 2016 01:22:44 GMT",
+            "connection": "close"
+        }
+    }
+]
